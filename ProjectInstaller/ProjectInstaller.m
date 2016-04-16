@@ -400,7 +400,7 @@ withTemporaryDirectory[tempDir_String, code_, opts : OptionsPattern[]] :=
     		CleanUp[code, deleted = Quiet@rmdir[tempDir]];
    		If[deleted === $Failed,
     		Message[withTemporaryDirectory::nodel, tempDir];
-    		If[TrueQ[OptionValue[FailIfCanNotDelet]],
+    		If[TrueQ[OptionValue[FailIfCanNotDelete]],
      			throwError[withTemporaryDirectory]
      		]
      	];
